@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+</head>
+<body>
+    <a href="https://www.naver.com/"><h1>네이버</h1></a>
+
+    <form action="http://localhost:8080">
+        <input type="checkbox" id="validate-username" name="validate-username" checked><span>실명 인증된 아이디로 가입</span><br>
+        <input type="text" id="username" name="username" placeholder="아이디" required>
+        <span>@naver.com</span><br>
+        <input type="password" id="password" name="password" placeholder="비밀번호" required><br>
+        <input type="button" id="show-password" value="비밀번호 보기"><br>
+        <span>[선택]</span><input type="email" id="email" name="email" placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)"><br>
+        <p>비밀번호: 필수 정보입니다.</p>
+        <input type="text" id="name" name="name" placeholder="이름" required><br>
+        <input type="number" id="birth" name="birth" placeholder="생년월일 8자리" min="19300101" max="20241121" required><br>
+        <select name="telecom" required>
+            <option value="" disabled selected>통신사 선택</option>
+            <option value="skt">SKT</option>
+            <option value="skt-low">SKT 알뜰폰</option>
+            <option value="kt">KT</option>
+            <option value="kt-low">KT 알뜰폰</option>
+            <option value="lgt">LG U+</option>
+            <option value="lgt-low">LG U+ 알뜰폰</option>
+        </select><br>
+        <input type="radio" id="male" name="gender" value="male"><span>남자</span><br>
+        <input type="radio" id="female" name="gender" value="female"><span>여자</span><br>
+        <input type="radio" id="local" name="country" value="local" checked><span>내국인</span><br>
+        <input type="radio" id="foreign" name="country" value="foreign"><span>외국인</span><br>
+        <input type="text" id="mobile" name="mobile" placeholder="휴대전화번호" pattern="01[0-9]{1}-[0-9]{4}-[0-9]{4}" title="###-####-####" required>
+        <p>생년원일: 필수 정보입니다.</p>
+        <input type="checkbox" id="agree" name="agree" required><span><em>[필수]</em>인증 약관 전체동의</span><br>
+        <select name="agree-list">
+            <option value="" disabled selected>약관 목록</option>
+            <option value="">개인정보 이용</option>
+            <option value="">고유식별정보 처리</option>
+            <option value="">통신사 이용약관</option>
+            <option value="">인증사 이용약관</option>
+            <option value="">네이버 개인정보수집</option>
+        </select><br>
+        <input type="submit" value="인증요청">
+    </form>
+</body>
+</html>
