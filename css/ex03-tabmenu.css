@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#tab-menu {
+    margin: 60px auto;
+    width: 80%;
+}
+
+#tab-menu > ul {
+    display: flex;
+    list-style: none;
+}
+
+#tab-menu > ul div {
+    color: skyblue;
+    border: solid 1px lightblue;
+    width: 120px;
+    padding: 15px;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+}
+
+#tab-menu > ul div:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+#menu1:checked ~ ul > li#li1 div, 
+#menu2:checked ~ ul > li#li2 div, 
+#menu3:checked ~ ul > li#li3 div
+{
+    color: white;
+    background-color: lightskyblue;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+p {
+    border: dashed 1px lightskyblue;
+    padding: 20px;
+}

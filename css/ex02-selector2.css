@@ -1,0 +1,75 @@
+/*
+전체 선택자 
+*별로 선택 처리
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: solid 2px grey;
+    margin: 10px;
+    padding: 20px;
+}
+
+/*
+속성 선택자 
+선택된엘리먼트[attr=value]
+*/
+/* a[href="https://www.naver.com/"] {
+    color: red;
+    text-decoration: none;
+} */
+
+/* a[href^="https"] {
+    color: darkcyan;
+} */
+
+/* a[href$=".kr/"] {
+    color:cyan;
+} */
+
+a[href*="daum"] {
+    color: red;
+}
+
+/*
+모의 선택자 (Psuedo 의사 선택자)
+선택된엘리먼트:상태옵션
+*/
+.box:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+/*
+자식 선택자 
+1) 공백 : 부모 요소의 하위 요소 모두를 타겟팅
+2) >    : 부모 요소의 직접 자식만 타겟팅
+*/
+#root span {
+    /* background-color: chartreuse; */
+}
+
+/* #root > span { */
+#root > .box {
+    background-color: blueviolet;
+}
+
+/*
+형제 선택자
+1) +    : 기준 요소로부터 가장 인접한 형제 요소 단 한 개 
+2) ~    : 기준 요소로부터 같은 선상에 있는 형제 모든 요소
+*/
+#b1 ~ .box {
+    color: white;
+}
