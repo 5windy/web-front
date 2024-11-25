@@ -36,6 +36,7 @@ header ul {
 
 section {
     margin-top: 50px;
+    border-top: solid 1.5px lightgray;
 }
 
 #nav-top {
@@ -114,6 +115,17 @@ header ul>li:hover,
     object-position: 0 -90px;
 }
 
+#article-main h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.8em;
+    line-height: 1.4em;
+    max-height: 2.8em;
+}
+
 #arti-tv {
     display: flex;
     flex-direction: column;
@@ -143,6 +155,17 @@ header ul>li:hover,
     padding-left: 15px;
 }
 
+#mini-list ul>li h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-height: 1.4em;
+    max-height: 1.4em;
+}
+
 main {
     grid-area: main;
 }
@@ -164,6 +187,7 @@ main {
 .arti-main-sub img {
     float: left;
     width: 40%;
+    margin-right: 10px;
     aspect-ratio: 4/3;
     object-fit: cover;
     object-position: center;
@@ -180,4 +204,35 @@ main {
     /* firefox 등의 -webkit을 지원하지 않는 브라우저에 대한 처리 */
     line-height: 1.4em;
     max-height: 4.2em;
+}
+
+#khanup-contents>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#khanup-contents article img {
+    width: 26%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+#khanup-contents article p {
+    color: rgba(42, 54, 99, 0.7);
+}
+
+#khanup-contents article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#khanup-contents>h3 {
+    margin: 50px 0 15px 0;
+}
+
+#section-mid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 26px;
 }
