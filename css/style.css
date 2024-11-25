@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Song+Myung&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 1110px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 3em;
+    font-family: "Song Myung", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    padding: 5px 0;
+    border-bottom: solid 3.5px black;
+}
+
+header ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+#nav-top {
+    padding: 0 5px;
+}
+
+#nav-top,
+#nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#nav-main ul>li:last-child {
+    color: red;
+}
+
+#btn-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#btn-hamburger {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png");
+    background-size: cover;
+}
+
+#btn-search {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/483/483356.png");
+    background-size: 80%;
+}
+
+#btn-group>button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header ul>li:hover,
+#btn-group>button:hover {
+    cursor: pointer;
+}
+
+#today {
+    font-size: 0.8em;
+}

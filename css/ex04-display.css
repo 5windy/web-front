@@ -1,0 +1,38 @@
+/*
+모든 엘리먼트들은 html 배치 설정값을 기본으로 가지고 있음
+
+display 속성의 종류
+1) block            : 크기 변경 가능 (width, height, margin, padding)
+2) inline           : 크기 변경 불가 
+3) inline-block     : 크기 변경 가능한 inline 배치
+4) flex
+5) grid
+
+*/
+
+h1 {
+    display: inline-block;
+    height: 200px;
+}
+
+#root {
+    background-color: lightblue;
+    width: 360px;
+    height: 100px;
+    /* 상하좌우 */
+    /* margin: 100px; */
+    /* 상 우 하 좌 */
+    /* margin: 100px 50px 200px 400px; */
+    /* 상하 우좌 */
+    /* margin: 100px 50px; */
+    margin: auto;
+}
+
+.box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: dashed 2px black;
+    border-radius: 25px;
+    text-align: center;
+}
