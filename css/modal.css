@@ -110,4 +110,7 @@ input[type="submit"] {
     background-image: url("https://www.svgrepo.com/show/21045/delete-button.svg");
     background-size: contain;
     scale: 75%;
+
+    /* 블랙 색상을 레드로 변경 */
+    filter: invert(40%) sepia(100%) saturate(1000%) hue-rotate(-50deg);
 }
