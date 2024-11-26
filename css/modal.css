@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    padding: 7px 14px;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+}
+
+input[type="button"],
+input[type="submit"] {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+input[type="submit"] {
+    color: white;
+    border: none;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#btn-delete>input[type="button"] {
+    color: red;
+    border: none;
+    background-color: rgba(245, 208, 208, 0.54);
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/abstract-landscape-background-traditional-japanese-themed-watercolour-style_1048-16449.jpg?t=st=1732582843~exp=1732586443~hmac=82ed3474c5a11aafd6f73bb90aaa86b229b29e04e5434ad62935e98643f8c77d&w=740");
+    background-size: cover;
+    background-position: center;
+}
+
+#modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal>form {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border: solid 3px white;
+    border-radius: 16px;
+    background-color: white;
+    margin: calc(100vh/2 - 300px) auto;
+}
+
+#profile {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 15px;
+}
+
+#profile-img {
+    width: 80px;
+    aspect-ratio: 1/1;
+    border: solid 2px white;
+    border-radius: 42px;
+    background-color: lightgray;
+}
+
+#preview-img {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+#background-box {
+    height: 80px;
+    border-radius: 16px 16px 0 0;
+    background-color: whitesmoke;
+}
+
+#form-content {
+    padding: 15px;
+}
+
+.icon-button {
+    position: relative;
+}
+
+.icon-button>input[type="button"] {
+    padding-left: 27px;
+}
+
+.icon-img {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+#btn-link>.icon-img {
+    background-image: url("https://icons.veryicon.com/png/o/miscellaneous/foundation-icon-5/link-86.png");
+    background-size: contain;
+    scale: 85%;
+}
+
+#btn-delete>.icon-img {
+    background-image: url("https://www.svgrepo.com/show/21045/delete-button.svg");
+    background-size: contain;
+    scale: 75%;
+}

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 300;
+}
+
+
+/*
+모든 엘리먼트들은 position 기본값 static
+*/
+
+#parent {
+    position: relative;
+    background-color: lightblue;
+    width: 600px;
+    /* height: 50vh; */
+    margin: 100px auto;
+}
+
+.children {
+    width: 50px;
+    height: 50px;
+    border: solid 1px black;
+}
+
+#child-1 {
+    /* top, bottom, left, right, z-index 의 속성을 지정할 수 없음 */
+    position: relative;
+    /* 기본값 */
+    /* top: 20px;
+    left: 20px; */
+    background-color: red;
+    z-index: 10;
+}
+
+#child-2 {
+    /* top, bottom, left, right, z-index 의 속성을 지정할 수 있음 */
+    /* 원래 요소 자기 자신의 자리를 기준으로 이동 */
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+#child-3 {
+    /* 
+    relative, absolute, fixed position을 가진 
+    부모 요소를 기준으로 이동 (static이면, viewport를 기준으로 이동)
+    */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: blue;
+}
+
+#child-4 {
+    /* 부모 요소의 경계를 기준으로 벗어나지 않고 자리를 유지 */
+    position: sticky;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#child-5 {
+    /* viewport 기준으로 고정된 자리에서 유지 */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 100, 0, 0.8);
+}
+
+/*
+z-index 관리 방법 (값이 높을수록 우선순위가 올라감)
+
+0: 기본 콘텐츠 
+10~99: 강조 콘텐츠 (modal 포함)
+100~199: 헤더 또는 푸터
+200~299: 팝업 콘텐츠
+300~999: 풀스크린 (화면 전체 영역을 차지하는 modal 등)
+*/
