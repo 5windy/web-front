@@ -1,18 +1,36 @@
+/* CSS 변수 관리 (전역) */
+:root {
+    --primary-color: gray;
+    --secondary-color: lightgray;
+    --padding-large: 15px;
+    --padding-small: 5px;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 input:not(input[type="file"]) {
     padding: 7px 14px;
-    border: solid 1px lightgray;
-    border-radius: 5px;
+    border: solid 1px var(--secondary-color);
+    border-radius: var(--padding-small);
     outline: none;
 }
 
 input[type="button"],
 input[type="submit"] {
     background-color: rgba(0, 0, 0, 0);
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 input[type="submit"] {
@@ -22,15 +40,15 @@ input[type="submit"] {
 }
 
 #firstname {
-    margin-right: 5px;
+    margin-right: var(--padding-small);
 }
 
 #url {
-    border-radius: 5px 0 0 5px;
+    border-radius: var(--padding-small) 0 0 var(--padding-small);
 }
 
 #username {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 var(--padding-small) var(--padding-small) 0;
     border-left: none;
 }
 
@@ -39,12 +57,12 @@ input[type="submit"] {
 }
 
 #input-area-file .input-group {
-    gap: 5px;
+    gap: var(--padding-small);
 }
 
 .btn-group {
     display: flex;
-    gap: 5px;
+    gap: var(--padding-small);
 }
 
 .btn-group#first {
@@ -65,12 +83,12 @@ input[type="submit"] {
 .input-area {
     display: grid;
     grid-template-columns: 120px auto;
-    padding: 15px 0;
-    border-bottom: solid 1px lightgray;
+    padding: var(--padding-large) 0;
+    border-bottom: solid 1px var(--secondary-color);
 }
 
 #input-container>.input-area:first-child {
-    border-top: solid 1px lightgray;
+    border-top: solid 1px var(--secondary-color);
 }
 
 .input-group {
@@ -82,8 +100,9 @@ input[type="submit"] {
     width: 50%;
 }
 
-input[type="email"] {
+#email {
     width: 100%;
+    padding-left: 27px;
 }
 
 #bottom-group {
@@ -125,7 +144,12 @@ input[type="email"] {
 #profile {
     position: absolute;
     top: 40px;
-    left: 15px;
+    left: var(--padding-large);
+}
+
+#profile>p {
+    color: var(--primary-color);
+    font-size: 0.9em;
 }
 
 #profile-img {
@@ -133,7 +157,7 @@ input[type="email"] {
     aspect-ratio: 1/1;
     border: solid 2px white;
     border-radius: 42px;
-    background-color: lightgray;
+    background-color: var(--secondary-color);
 }
 
 #preview-img {
@@ -141,7 +165,7 @@ input[type="email"] {
     aspect-ratio: 1/1;
     border: none;
     border-radius: 20px;
-    background-color: lightgray;
+    background-color: var(--secondary-color);
 }
 
 #background-box {
@@ -151,7 +175,7 @@ input[type="email"] {
 }
 
 #form-content {
-    padding: 15px;
+    padding: var(--padding-large);
 }
 
 .icon-button {
@@ -165,7 +189,7 @@ input[type="email"] {
 .icon-img {
     position: absolute;
     top: 6px;
-    left: 5px;
+    left: var(--padding-small);
     width: 1.2em;
     height: 1.2em;
 }
@@ -183,4 +207,33 @@ input[type="email"] {
 
     /* 블랙 색상을 레드로 변경 */
     filter: invert(40%) sepia(100%) saturate(1000%) hue-rotate(-50deg);
+}
+
+#email-icon {
+    background-image: url("https://www.iconpacks.net/icons/1/free-mail-icon-142-thumb.png");
+    background-size: contain;
+}
+
+#input-area-email .input-group {
+    position: relative;
+}
+
+/* CSS 미디어 쿼리를 활용한 반응형 처리하기 */
+@media screen and (max-width: 400px) {
+    #modal>form {
+        width: 90vw;
+    }
+
+    #bottom-group {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #modal>form {
+        height: 90vh;
+        margin: var(--padding-large) auto;
+    }
 }
