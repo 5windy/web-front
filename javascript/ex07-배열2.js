@@ -17,3 +17,29 @@ arr.push({
 });
 
 console.log(arr);
+
+const map = new Array();
+
+/*
+[
+[1,2,3,4,5],
+[1,2,3,4],
+[1,2,3],
+[1,2],
+[1]
+]
+
+콘솔에서 테이블 출력 (2차원 배열에 대하여)
+console.table(map)
+*/
+
+for(let i=0; i<5; i++) {
+    const row = [];
+    for(let j=0; j<5-i; j++) {
+        row.push(j+1);
+    }
+    map.push(row);
+}
+
+console.table(map);
+
