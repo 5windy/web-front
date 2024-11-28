@@ -35,7 +35,7 @@ ul {
 
 li input[type="text"] {
     font-size: 1.1em;
-    padding: 10px 15px;
+    padding: 20px 15px;
     border: none;
     background-color: rgba(0, 0, 0, 0);
     outline: none;
@@ -64,8 +64,9 @@ li input[type="checkbox"]:checked ~ label>.check-image {
 }
 
 #save {
+    font-size: 1.1em;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 30px;
     margin: 50px auto;
     border: none;
     border-radius: 10px;
