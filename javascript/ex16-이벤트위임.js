@@ -1,5 +1,3 @@
-const checkImg = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNV3bAT-Obnno05IQpAV5o7OhH7hiueQ55Hg&s", "https://www.svgrepo.com/show/169312/check-mark.svg"];
-
 class Todo {
 
 }
@@ -17,6 +15,5 @@ window.onload = () => {
     const list = [];
 
     const todoList = document.getElementById("todo-list");
-    
 
 }
