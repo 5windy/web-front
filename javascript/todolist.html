@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="todolist.js"></script>
+    
+    <link rel="stylesheet" href="todolist.css">
+
+    <title>Todo list</title>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <div id="todo-list">
+        <ul>
+            <li id="todo-sample">
+                <div>
+                    <input type="checkbox" id="chk0">
+                    <label for="chk0">
+                        <img class="check-image">
+                    </label>
+                    <input type="text" value="고양이 밥주기" disabled>
+                </div>
+            </li>
+            <li id="input">
+                <div>
+                    <input type="checkbox" id="chk">
+                    <label for="chk">
+                        <img class="check-image">
+                    </label>
+                    <input id="input-content" type="text" placeholder="오늘의 할 일" autofocus>
+                </div>
+            </li>
+        </ul>
+        <button id="save">저장</button>
+    </div>
+
+
+</body>
+</html>
