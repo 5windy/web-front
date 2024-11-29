@@ -2,7 +2,7 @@ class Todo {
     #isDone;
     #content;
 
-    constructor(content, isDone) {
+    constructor(content="", isDone=false) {
         this.#content = content;
         this.#isDone = isDone;
     }
@@ -13,11 +13,53 @@ class Todo {
     // 사용을 할 때에는 마치 속성값을 초기화하거나 얻는 것처럼 사용을 함
     get getIsDone() {
         return this.#isDone;
-    }   
-    
+    }
+
     set setIsDone(isDone) {
         this.#isDone = isDone;
     }
+
+    get getContent() {
+        return this.#content;
+    }
+
+    set setContent(content) {
+        this.#content = content;
+    }
+}
+
+const createTodoListElement = (todo, code=0) => {
+    const li = document.createElement("li");
+    const div = document.createElement("div");
+    const checkbox = document.createElement("input");
+    const label = document.createElement("label");
+    const img = document.createElement("img");
+    const text = document.createElement("input");
+
+    li.id = code === 0 ? "input" : `todo${code}`;
+    checkbox.id = code === 0 ? "chk" : `chk${code}`;
+    checkbox.type = "checkbox";
+    label.for = code === 0 ? "chk" : `chk${code}`;
+    img.className = "check-image";
+    text.type = "text";
+    text.value = todo.getContent;
+    text.disabled = code !== 0;
+
+    if(code === 0) {
+        text.id = "input-content";
+        text.placeholder = "오늘의 할 일";
+        text.autofocus = true;
+    }
+
+    label.appendChild(img);
+
+    div.appendChild(checkbox);
+    div.appendChild(label);
+    div.appendChild(text);
+
+    li.appendChild(div);
+
+    return li;
 }
 
 window.onload = () => {
@@ -33,29 +75,44 @@ window.onload = () => {
     const list = [];
 
     const todoList = document.getElementById("todo-list");
-    console.log(todoList);
-    
     const ul = todoList.querySelector("ul");
-    console.log(ul);
-
     const save = todoList.querySelector("#save");
 
+    // 이벤트 버블링을 활용한 ul 엘리먼트에게 이벤트 위임 처리 
     ul.addEventListener("click", e => {
         const target = e.target;
-
+        if (target.type === "checkbox" && target.id !== "chk") {
+            const message = target.checked ? "완료" : "미완료";
+            alert(message);
+        }
     });
 
     save.addEventListener("click", e => {
         // 1. input element의 아이디 input-contnet 영역 안에 있는 value를 가져와 
+        const input = document.getElementById("input-content");
+        const content = input.value;
+        const isDone = document.getElementById("chk").checked;
+
         // 2. value가 빈 문자열이 아니면 
         // 3. 아이디 chk로부터 checked 속성 값도 변수로 저장 한 후,
-        // 4. Todo 객체를 생성
-        // 5. list 배열에 추가한 후, 
+        if (content) {
+            // 4. Todo 객체를 생성
+            const todo = new Todo(content, isDone);
+            // 5. list 배열에 추가한 후, 
+            list.push(todo);
+
+        }
+
         // 6. list 배열의 내용을 기반으로 ul 영역안에 li 엘리먼트 추가
         // ㄴ 그리기 전, ul의 innterHTML 을 모두 삭제
+        ul.innerHTML = "";
 
-        const todo = new Todo("오늘의 할 일", false);
-        todo.setIsDone = true;
-        console.log(todo.getIsDone);
+        list.forEach((todo, index) => {
+            const li = createTodoListElement(todo, index + 1);
+            ul.appendChild(li);
+        });
+
+        const i = createTodoListElement(new Todo());
+        ul.appendChild(i);
     });
 }
